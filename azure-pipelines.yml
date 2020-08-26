@@ -27,5 +27,13 @@ steps:
     npm install --save-dev ngx-bootstrap@5.2.0
     ng build
     pwd && ls -l
+  displayName: 'Install Dependencies'
+
+- script: |
+    ng build
+    cd dist && ls -l
+  displayName: 'Building the application'
+
+- script: 
     npm test -- --watch=false --code-coverage --browsers=ChromeHeadless
-  displayName: 'Install Dependencies and building the application'
+  displayName: 'Running unit tests'
