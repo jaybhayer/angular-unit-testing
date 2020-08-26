@@ -11,7 +11,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-20.04'
+  vmImage: 'windows-latest'
 
 steps:
 - task: NodeTool@0
@@ -25,14 +25,11 @@ steps:
     npm i
     npm i --save-dev moment@2.24.0
     npm install --save-dev ngx-bootstrap@5.2.0
-    ng test --watch=false
-    
-    echo "Working directory."
-    pwd
-    echo "directory content."
-    ls -l
-    echo "###########################Contents of the Dist folder are listed below##########################"
   displayName: 'Install Dependencies'
+
+- script: 
+    ng test
+  displayName: 'Running Unit Tests'
 
 
   
