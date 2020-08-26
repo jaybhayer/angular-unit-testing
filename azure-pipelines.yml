@@ -37,3 +37,15 @@ steps:
 - script: 
     npm test -- --watch=false --code-coverage --browsers=ChromeHeadless
   displayName: 'Running unit tests'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial(dfadb5eb-8b3f-4f7f-a9ce-27ca16e8a363)'
+    appType: 'webApp'
+    WebAppName: 'Simple-Aungular-App-With-Unit-Tests'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'RajnikantsRG'
+    SlotName: 'production'
+    packageForLinux: 'dist'
+  displayName: 'Deploying the application to App Service'  
