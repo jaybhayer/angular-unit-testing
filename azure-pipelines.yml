@@ -28,5 +28,8 @@ steps:
     ng test
   displayName: 'Install Dependencies'
 
-
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'ng test'
   
