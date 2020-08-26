@@ -25,11 +25,5 @@ steps:
     npm i
     npm i --save-dev moment@2.24.0
     npm install --save-dev ngx-bootstrap@5.2.0
+    npm test
   displayName: 'Install Dependencies'
-
-- task: Npm@1
-  inputs:
-    command: 'custom'
-    customCommand: 'npm test'
-  displayName: 'Running Unit Tests'
-  
