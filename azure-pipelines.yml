@@ -30,6 +30,6 @@ steps:
 - task: Npm@1
   inputs:
     command: 'custom'
-    customCommand: 'ng test'
+    customCommand: 'npm test'
   displayName: 'Running Unit Tests'
   
