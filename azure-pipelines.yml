@@ -20,6 +20,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    xhost +
     npm install -g @angular/cli@latest
     npm cache clean --force
     npm i
