@@ -21,7 +21,7 @@ steps:
     wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip
     pwd
     ls -l
-    unzip *.zip .
+    unzip *.zip 
   displayName: 'Downloading sonar scanner'  
 
 - script: |
