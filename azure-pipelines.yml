@@ -15,13 +15,19 @@ steps:
     sudo apt-get update
     sudo apt-get install curl
     sudo apt-get install wget
-    sudo apt-get install -y ca-certificates
-    npm install -g npm
   displayName: 'Installing CURL and WGET'
 
-- task: SonarQubePrepare@4
+- script: |
+    wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip
+  displayName: 'Downloading sonar scanner'  
+
+- task: ExtractFiles@1
   inputs:
-    SonarQube: 'Extentias-SonarQube'
-    scannerMode: 'CLI'
-    configMode: 'file'
-- task: SonarQubeAnalyze@4
+    archiveFilePatterns: 'sonar-scanner-cli-4.4.0.2170-linux.zip'
+    destinationFolder: '$(agent.builddirectory)'
+    cleanDestinationFolder: true
+  displayName: 'Extracting the zip file'  
+
+- script: |
+    pwd
+    ls -l
