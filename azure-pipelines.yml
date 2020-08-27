@@ -19,11 +19,13 @@ steps:
 
 - script: |
     wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip
+    pwd
+    ls -l
   displayName: 'Downloading sonar scanner'  
 
 - task: ExtractFiles@1
   inputs:
-    archiveFilePatterns: 'sonar-scanner-cli-4.4.0.2170-linux.zip'
+    archiveFilePatterns: '$(agent.builddirectory)/sonar-scanner-cli-4.4.0.2170-linux.zip'
     destinationFolder: '$(agent.builddirectory)'
     cleanDestinationFolder: true
   displayName: 'Extracting the zip file'  
