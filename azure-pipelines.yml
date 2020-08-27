@@ -12,22 +12,16 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    sudo apt-get update
-    sudo apt-get install curl
-    sudo apt-get install wget
-  displayName: 'Installing CURL and WGET'
-
-- script: |
-    wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip
     pwd
     ls -l
-    unzip *.zip 
-  displayName: 'Downloading sonar scanner' 
 
-- script: |
-    /home/vsts/work/1/s/sonar-scanner-4.4.0.2170-linux/bin/sonar-scanner
-  displayName: 'Executing Sonar scanner'
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'Extentias-SonarQube'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'Azure-Integration-EMS'
+    cliProjectName: 'Azure-Integration-EMS'
+    cliSources: '.'
 
-- script: |
-    pwd
-    ls -l
+- task: SonarQubeAnalyze@4
