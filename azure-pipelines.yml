@@ -8,20 +8,34 @@ steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '12.x'
-    checkLatest: true
   displayName: 'Install Node.js'
 
 - script: |
+    npm install -g @angular/cli@latest
+    npm i
+    sudo apt-get update
+    sudo apt-get install curl
+    sudo apt-get install wget
+    pwd && ls -l
+  displayName: 'Installing Dependencies'
+
+- script: |
+    ng build
+    cd dist && ls -l
+  displayName: 'Building the application'
+
+- script: |
+    npm test -- --watch=false --code-coverage --browsers=ChromeHeadless
+  displayName: 'Running unit tests'
+  
+
+- script: |
+    wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip
     pwd
     ls -l
+    unzip *.zip 
+  displayName: 'Downloading sonar scanner' 
 
-- task: SonarQubePrepare@4
-  inputs:
-    SonarQube: 'Extentias-SonarQube'
-    scannerMode: 'CLI'
-    configMode: 'manual'
-    cliProjectKey: 'Azure-Integration-EMS'
-    cliProjectName: 'Azure-Integration-EMS'
-    cliSources: '.'
-
-- task: SonarQubeAnalyze@4
+- script: |
+    /home/vsts/work/1/s/sonar-scanner-4.4.0.2170-linux/bin/sonar-scanner
+  displayName: 'Executing Sonar scanner'  
