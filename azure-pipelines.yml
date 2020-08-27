@@ -20,12 +20,12 @@ steps:
   displayName: 'Installing Dependencies'
 
 - script: |
-    ng build
+    ng build --prod
     cd dist && ls -l
   displayName: 'Building the application and deploying'
 
 - script: |
-    npm test -- --watch=false --code-coverage --browsers=ChromeHeadless
+    npm run e2e
   displayName: 'Running unit tests'
   
 
