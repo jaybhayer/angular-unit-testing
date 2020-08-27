@@ -20,7 +20,7 @@ steps:
   displayName: 'Installing Dependencies'
 
 - script: |
-    ng build --prod
+    ng build
     cd dist && ls -l
   displayName: 'Building the application and deploying'
 
