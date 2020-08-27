@@ -23,8 +23,5 @@ steps:
   inputs:
     SonarQube: 'Extentias-SonarQube'
     scannerMode: 'CLI'
-    configMode: 'manual'
-    cliProjectKey: 'Azure-Sonar-Integration-Test'
-    cliProjectName: 'Azure-Sonar-Integration-Test'
-    cliSources: '.'
+    configMode: 'file'
 - task: SonarQubeAnalyze@4
