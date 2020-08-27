@@ -25,7 +25,7 @@ steps:
   displayName: 'Downloading sonar scanner' 
 
 - script: |
-    /home/vsts/work/1/s/bin/sonar-scanner
+    /home/vsts/work/1/s/sonar-scanner-4.4.0.2170-linux/bin/sonar-scanner
   displayName: 'Executing Sonar scanner'
 
 - script: |
