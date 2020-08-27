@@ -16,6 +16,7 @@ steps:
     sudo apt-get install wget
   displayName: 'Installing CURL'
 
+
 - task: SonarQubePrepare@4
   inputs:
     SonarQube: 'Extentias-SonarQube'
@@ -25,3 +26,4 @@ steps:
     cliProjectName: 'Azure-test-project'
     cliSources: '.'
     extraProperties: 'sonar.host.url=https://sonar.extentia.com/'
+- task: SonarQubeAnalyze@4
