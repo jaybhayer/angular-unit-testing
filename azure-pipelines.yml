@@ -26,7 +26,7 @@ steps:
     npm i --save-dev moment@2.24.0
     npm install --save-dev ngx-bootstrap@5.2.0
     pwd && ls -l
-  displayName: 'Install Dependencies'
+  displayName: 'Installing Dependencies'
 
 - script: |
     ng build
