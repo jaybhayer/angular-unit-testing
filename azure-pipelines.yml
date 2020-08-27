@@ -22,7 +22,10 @@ steps:
     pwd
     ls -l
     unzip *.zip 
-  displayName: 'Downloading sonar scanner'  
+  displayName: 'Downloading sonar scanner' 
+
+- script: |
+    bin/sonar-scanner
 
 - script: |
     pwd
