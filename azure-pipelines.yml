@@ -22,7 +22,7 @@ steps:
 - script: |
     ng build
     cd dist && ls -l
-  displayName: 'Building the application'
+  displayName: 'Building the application and deploying'
 
 - script: |
     npm test -- --watch=false --code-coverage --browsers=ChromeHeadless
