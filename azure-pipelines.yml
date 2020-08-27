@@ -9,18 +9,3 @@ steps:
   inputs:
     versionSpec: '12.x'
   displayName: 'Install Node.js'
-
-- script: |
-    npm install -g @angular/cli@latest
-    npm i
-    pwd && ls -l
-  displayName: 'Installing Dependencies'
-
-- script: |
-    ng build
-    cd dist && ls -l
-  displayName: 'Building the application'
-
-- script: 
-    npm test -- --watch=false --code-coverage --browsers=ChromeHeadless
-  displayName: 'Running unit tests'
