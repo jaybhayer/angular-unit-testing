@@ -14,8 +14,14 @@ steps:
 - script: |
     sudo apt-get install curl
     sudo apt-get install wget
+    npm install -g npm
   displayName: 'Installing CURL and WGET'
 
-- script:
-    echo '#########################Contents of /etc/hosts file are listed below##########################'
-    cat /etc/hosts
+- task: SonarQubePrepare@4
+  inputs:
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'Azure-Project-Test'
+    cliProjectName: 'Azure-Project-Test'
+    cliSources: '.'
+    extraProperties: 'sonar.host.url=https://sonar.extentia.com/'
