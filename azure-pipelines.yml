@@ -25,7 +25,8 @@ steps:
   displayName: 'Downloading sonar scanner' 
 
 - script: |
-    bin/sonar-scanner
+    /home/vsts/work/1/s/bin/sonar-scanner
+  displayName: 'Executing Sonar scanner'
 
 - script: |
     pwd
