@@ -25,3 +25,4 @@ steps:
     cliProjectName: 'Azure-Project-Test'
     cliSources: '.'
     extraProperties: 'sonar.host.url=https://sonar.extentia.com/'
+- task: SonarQubeAnalyze@4
