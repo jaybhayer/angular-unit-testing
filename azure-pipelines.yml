@@ -11,6 +11,12 @@ steps:
     checkLatest: true
   displayName: 'Install Node.js'
 
+- script: |
+    apt update
+    apt upgrade
+    apt install curl
+  displayName: 'Installing CURL'
+
 - task: SonarQubePrepare@4
   inputs:
     SonarQube: 'Extentias-SonarQube'
