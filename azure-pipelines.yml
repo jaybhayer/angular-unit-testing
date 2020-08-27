@@ -14,7 +14,7 @@ steps:
 - script: |
     sudo apt-get install curl
     sudo apt-get install wget
-  displayName: 'Installing CURL'
+  displayName: 'Installing CURL and WGET'
 
 
 - task: SonarQubePrepare@4
