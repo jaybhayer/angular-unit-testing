@@ -25,7 +25,7 @@ steps:
 
 - task: ExtractFiles@1
   inputs:
-    archiveFilePatterns: '$(agent.builddirectory)/sonar-scanner-cli-4.4.0.2170-linux.zip'
+    archiveFilePatterns: '$(/home/vsts/work/1/s/sonar-scanner-cli-4.4.0.2170-linux.zip'
     destinationFolder: '$(agent.builddirectory)'
     cleanDestinationFolder: true
   displayName: 'Extracting the zip file'  
