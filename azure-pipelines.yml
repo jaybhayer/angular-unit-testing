@@ -19,10 +19,10 @@ steps:
 
 - task: SonarQubePrepare@4
   inputs:
+    SonarQube: 'Extentias-SonarQube'
     scannerMode: 'CLI'
     configMode: 'manual'
-    cliProjectKey: 'Azure-Project-Test'
-    cliProjectName: 'Azure-Project-Test'
+    cliProjectKey: 'Azure-Sonar-Integration-Test'
+    cliProjectName: 'Azure-Sonar-Integration-Test'
     cliSources: '.'
-    extraProperties: 'sonar.host.url=https://sonar.extentia.com/'
 - task: SonarQubeAnalyze@4
