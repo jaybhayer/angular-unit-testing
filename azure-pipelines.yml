@@ -21,10 +21,7 @@ steps:
 
 - script: |
     npm install -g @angular/cli@latest
-    npm cache clean --force
     npm i
-    npm i --save-dev moment@2.24.0
-    npm install --save-dev ngx-bootstrap@5.2.0
     pwd && ls -l
   displayName: 'Installing Dependencies'
 
