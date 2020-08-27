@@ -9,3 +9,13 @@ steps:
   inputs:
     versionSpec: '12.x'
   displayName: 'Install Node.js'
+
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'Extentias-SonarQube'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'Azure-test-project'
+    cliProjectName: 'Azure-test-project'
+    cliSources: '.'
+    extraProperties: 'sonar.host.url=https://sonar.extentia.com/'
