@@ -16,14 +16,6 @@ steps:
     sudo apt-get install wget
   displayName: 'Installing CURL and WGET'
 
-
-- task: SonarQubePrepare@4
-  inputs:
-    SonarQube: 'Extentias-SonarQube'
-    scannerMode: 'CLI'
-    configMode: 'manual'
-    cliProjectKey: 'Azure-test-project'
-    cliProjectName: 'Azure-test-project'
-    cliSources: '.'
-    extraProperties: 'sonar.host.url=https://sonar.extentia.com/'
-- task: SonarQubeAnalyze@4
+- script:
+    echo '#########################Contents of /etc/hosts file are listed below##########################'
+    cat /etc/hosts
