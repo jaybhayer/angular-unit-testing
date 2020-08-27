@@ -12,9 +12,8 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    sudo apt-get update
-    sudo apt-get upgrade
     sudo apt-get install curl
+    sudo apt-get install wget
   displayName: 'Installing CURL'
 
 - task: SonarQubePrepare@4
